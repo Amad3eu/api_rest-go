@@ -1,0 +1,16 @@
+{{ $root:= . }}
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $root.Release.Name }}-service
+spec:
+  selector:
+{{- include "labels" . | nindent 4 }}
+  {{- with .Values.Service}}
+  type: {{ .Type }}
+  ports:
+    - port: {{ .Port }}
+      targetPort: {{ .TargerPort }}
+      nodePort: {{ .NodePort }}
+  {{- end}}

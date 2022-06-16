@@ -1,0 +1,26 @@
+{{ $root := . }}
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{$root.Release.Name}}-deployment
+  labels:
+{{- include "labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.Deployment.Replicas }}
+  selector:
+    matchLabels:
+{{- include "labels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+{{- include "labels" . | nindent 8 }}
+    spec:
+      containers:
+        {{- with .Values.Deployment}}
+        - name: {{ .ContainerName }}
+          image: {{ .Image }}
+          ports:
+          - containerPort: {{ .ContainerPort }}
+        {{- end }}
+

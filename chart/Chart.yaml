@@ -1,0 +1,4 @@
+apiVersion: v2
+name: "go-rest-api"
+version: 2.0.1
+AppsVersion: "2.0.1"

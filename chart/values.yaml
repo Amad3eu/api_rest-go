@@ -1,0 +1,23 @@
+Deployment:
+  Replicas: 2
+  ContainerName: go-rest-api
+  Image: pkbhowmick/go-rest-api:2.0.1
+  ContainerPort: 8080
+
+
+Labels:
+  app: go-rest-api
+
+Service:
+  Type: NodePort
+  Port: 8080
+  TargerPort: 8080
+  NodePort: 30000
+
+Ingress:
+  Host: api.github.local
+  Path: /
+  PathType: Prefix
+  PortNumber: 8080
+
+

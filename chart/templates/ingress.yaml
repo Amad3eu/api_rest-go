@@ -1,0 +1,22 @@
+{{ $root := . }}
+
+{{- with .Values.Ingress }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $root.Release.Name }}
+spec:
+  rules:
+    - host: {{ .Host }}
+      http:
+        paths:
+          - path: {{ .Path }}
+            pathType: {{ .PathType }}
+            backend:
+              service:
+                name: {{ $root.Release.Name }}-service
+                port:
+                  number: {{ .PortNumber }}
+
+  {{- end}}
+
