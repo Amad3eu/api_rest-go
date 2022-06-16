@@ -2,7 +2,7 @@
 
 - This API server provides endpoints to create,read,update & delete users and their repositories (like Github).
   
-[![Go Report Card](https://goreportcard.com/badge/github.com/Amad3eu/rest_api_cli)](https://goreportcard.com/report/github.com/Amad3eu/api_rest_cli)
+[![Go Report Card](https://github.com/gojp/goreportcard)](https://github.com/gojp/goreportcard)
 
 ## To Start API Server
 ```$ git clone https://github.com/pkbhowmick/go-rest-api.git```
