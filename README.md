@@ -3,7 +3,7 @@
 - This API server provides endpoints to create,read,update & delete users and their repositories (like Github).
 
 ## To Start API Server
-```$ git clone https://github.com/pkbhowmick/go-rest-api.git```
+```$ git clone https://github.com/Amad3eu/api_rest-go.git```
 
 ```$ cd go-rest-api```
 
